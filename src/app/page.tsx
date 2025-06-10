@@ -104,30 +104,6 @@ export default function Portfolio() {
     },
   ]
 
-  const experience = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      description:
-        "Led development of scalable web applications, mentored junior developers, and implemented CI/CD pipelines.",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Agency Co.",
-      period: "2020 - 2022",
-      description:
-        "Developed responsive web applications, collaborated with design teams, and optimized application performance.",
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2019 - 2020",
-      description:
-        "Built web applications using modern frameworks, participated in code reviews, and learned industry best practices.",
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-background/95 scroll-smooth">
       {/* Navigation */}
@@ -141,7 +117,7 @@ export default function Portfolio() {
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              {["About", "Projects", "Experience", "Contact"].map((item) => {
+              {["About", "Projects","Contact"].map((item) => {
                 const sectionId = item.toLowerCase()
                 const isActive = activeSection === sectionId
                 return (
@@ -228,7 +204,7 @@ export default function Portfolio() {
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</h2>
             <p className="text-muted-foreground max-w-[600px] mx-auto">
-              Passionate developer with 5+ years of experience building scalable web applications
+              Passionate developer with experience of building scalable web applications
             </p>
           </div>
 
