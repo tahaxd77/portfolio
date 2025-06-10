@@ -335,42 +335,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="experience" className="container px-4 py-24 relative mx-auto transition-all duration-500 ease-in-out">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
-        <div className="space-y-8 relative">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Experience</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
-              Here's a brief overview of my professional journey
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {experience.map((exp, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-600/20">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-blue-600">
-                    <Code className="h-5 w-5" />
-                    {exp.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">{exp.description}</p>
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-semibold">{exp.company}</span>
-                      {" - "}
-                      <span className="text-muted-foreground">{exp.period}</span>
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="container px-4 py-24 bg-muted/50 relative mx-auto transition-all duration-500 ease-in-out">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
