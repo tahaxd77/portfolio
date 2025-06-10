@@ -182,10 +182,12 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="flex flex-col gap-3 min-[400px]:flex-row">
-              <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-500 ease-in-out transform hover:scale-105">
-                <Download className="h-4 w-4 transition-transform duration-500 ease-in-out group-hover:translate-y-1" />
-                Download Resume
-              </Button>
+              <a href="/files/Resume.pdf" download>
+                <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-500 ease-in-out transform hover:scale-105">
+                  <Download className="h-4 w-4 transition-transform duration-500 ease-in-out group-hover:translate-y-1" />
+                  Download Resume
+                </Button>
+              </a>
               <Button variant="outline" size="lg" asChild className="border-2 hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-500 ease-in-out transform hover:scale-105">
                 <Link href="#contact">Get In Touch</Link>
               </Button>
