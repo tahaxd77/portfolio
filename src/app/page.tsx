@@ -76,33 +76,47 @@ export default function Portfolio() {
     "Git",
   ]
 
+  // ...existing code...
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      image: "/placeholder.svg?height=200&width=300",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, team collaboration, and analytics.",
-      image: "/placeholder.svg?height=200&width=300",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      github: "#",
-      live: "#",
-    },
-    {
-      title: "AI Content Generator",
-      description: "AI-powered content creation platform using machine learning for automated content generation.",
-      image: "/placeholder.svg?height=200&width=300",
-      technologies: ["Python", "OpenAI API", "FastAPI", "React"],
-      github: "#",
-      live: "#",
-    },
-  ]
+  {
+    title: "Movie Recommendation System",
+    description:
+      "Personalized movie recommendation system using Spark MLlib (ALS algorithm), Flask REST APIs, and a JavaScript frontend for interactive user experience. Scalable on large datasets.",
+    image: "/images/2816015.jpg",
+    technologies: ["Python", "Jupyter Notebook", "Spark MLlib", "Flask", "JavaScript"],
+    github: "https://github.com/tahaxd77/movie_reccomendation_system",
+    live: "",
+  },
+  {
+    title: "Real Estate Price Predictor",
+    description:
+      "Predictive tool using machine learning models to estimate real estate prices based on user input and historical data. Includes data preprocessing, model training, and performance visualization.",
+    image: "/images/104970.jpg",
+    technologies: ["Python", "scikit-learn", "pandas", "matplotlib", "JavaScript", "HTML", "CSS"],
+    github: "https://github.com/tahaxd77/housepricepredictor",
+    live: "",
+  },
+  
+  {
+    title: "BuilderPro",
+    description:
+      "Cross-platform e-commerce mobile app for building materials. Features product browsing, search, purchase, user authentication, and real-time database operations with Supabase.",
+    image: "/images/builder-pro.jpg",
+    technologies: ["React Native", "JavaScript", "Supabase"],
+    github: "https://github.com/tahaxd77/builder-pro",
+    live: "",
+  },
+  {
+    title: "RealTime Chat Application",
+    description:
+      "Real-time chat app enabling users to connect and message friends instantly with a responsive and intuitive UI.",
+    image: "/images/chat.jpg",
+    technologies: ["React", "JavaScript"],
+    github: "https://github.com/tahaxd77/realtime-chat",
+    live: "",
+  },
+]
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-background/95 scroll-smooth">
@@ -280,7 +294,7 @@ export default function Portfolio() {
                 </div>
                 <CardHeader>
                   <CardTitle className="line-clamp-1 group-hover:text-blue-600 transition-colors duration-300">{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+                  <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-1">
@@ -291,18 +305,25 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" asChild className="hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300">
-                      <Link href={project.github} target="_blank">
-                        <Github className="h-4 w-4 mr-1" />
-                        Code
-                      </Link>
-                    </Button>
-                    <Button size="sm" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
-                      <Link href={project.live} target="_blank">
-                        <ExternalLink className="h-4 w-4 mr-1" />
-                        Live Demo
-                      </Link>
-                    </Button>
+                    {/* Only show buttons if links are provided */}
+                    {project.github && (
+                      <Button size="sm" variant="outline" asChild className="hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300">
+                        <Link href={project.github} target="_blank">
+                          <Github className="h-4 w-4 mr-1" />
+                          Code
+                        </Link>
+                      </Button>
+                    )}
+                    {project.live && (
+                      <Button size="sm" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
+                        <Link href={project.live} target="_blank">
+                          <ExternalLink className="h-4 w-4 mr-1" />
+                          Live Demo
+                        </Link>
+                      </Button>
+                    )}
+                    
+                    
                   </div>
                 </CardContent>
               </Card>
