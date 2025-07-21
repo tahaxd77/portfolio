@@ -202,7 +202,7 @@ export default function Portfolio() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse transition-all duration-700 ease-in-out" />
                 <Avatar className="h-64 w-64 border-4 border-background shadow-2xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-blue-500/20 hover:border-blue-500/20">
-                  <AvatarImage src="/images/me.jpg" alt="Muhammad Taha" className="object-cover w-full h-full transition-transform duration-500 ease-in-out" />
+                  <AvatarImage src="/images/taha2.png" alt="Muhammad Taha" className="object-cover w-full h-full transition-transform duration-500 ease-in-out" />
                   <AvatarFallback className="text-4xl bg-gradient-to-r from-blue-600 to-purple-600 text-white transition-all duration-500 ease-in-out">MT</AvatarFallback>
                 </Avatar>
               </div>
