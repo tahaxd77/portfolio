@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
+import AnimatedBackground from "@/components/AnimatedBackground"
 import {
   Github,
   Linkedin,
@@ -119,14 +120,15 @@ export default function Portfolio() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/95 scroll-smooth">
+    <div className="min-h-screen gradient-bg cyber-grid scroll-smooth overflow-hidden relative">
+      <AnimatedBackground />
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <nav className="sticky top-0 z-50 w-full border-b glass backdrop-blur-xl border-blue-500/20">
         <div className="container flex h-16 items-center">
           <div className="ml-4 flex py-4">
             <Link href="/" className="mr-6 flex items-center space-x-2 text-lg font-bold group">
-              <Code className="h-6 w-6 transition-transform duration-500 ease-in-out group-hover:rotate-12" />
-              <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Taha's Portfolio</span>
+              <Code className="h-6 w-6 neon-glow transition-transform duration-500 ease-in-out group-hover:rotate-12 text-blue-400" />
+              <span className="font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent neon-text">Taha's Portfolio</span>
             </Link>
           </div>
           <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
@@ -138,8 +140,8 @@ export default function Portfolio() {
                   <button
                     key={item}
                     onClick={() => scrollToSection(sectionId)}
-                    className={`relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-blue-600 after:to-purple-600 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full ${
-                      isActive ? "after:w-full text-blue-600" : "text-foreground/60 hover:text-foreground"
+                    className={`relative px-3 py-1 rounded-md transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-blue-400 after:to-purple-400 after:transition-all after:duration-500 after:ease-in-out hover:after:w-full hover:bg-white/5 ${
+                      isActive ? "after:w-full text-blue-400 neon-border" : "text-foreground/80 hover:text-foreground"
                     }`}
                   >
                     {item}
@@ -152,33 +154,34 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container px-4 py-24 md:py-32 relative overflow-hidden mx-auto">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center relative">
+      <section className="container px-4 py-24 md:py-32 relative overflow-hidden mx-auto scan-line">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-purple-500/20 to-transparent blur-3xl animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent" />
+        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center relative z-10">
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none animate-in slide-in-from-left duration-1000">
                 Hi, I'm{" "}
-                <span className="relative">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent neon-text">
                     Muhammad Taha
                   </span>
-                  <span className="absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-blue-600 to-purple-600" />
+                  <span className="absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-blue-400 to-purple-400 neon-border animate-pulse" />
                 </span>
               </h1>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed">
+              <p className="max-w-[600px] text-muted-foreground md:text-xl leading-relaxed animate-in slide-in-from-left duration-1000 delay-200">
                 Full Stack Developer passionate about creating exceptional digital experiences. I specialize in modern
                 web technologies and love turning ideas into reality.
               </p>
             </div>
-            <div className="flex flex-col gap-3 min-[400px]:flex-row">
+            <div className="flex flex-col gap-3 min-[400px]:flex-row animate-in slide-in-from-left duration-1000 delay-300">
               <a href="/files/Resume.pdf" download>
-                <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-500 ease-in-out transform hover:scale-105">
-                  <Download className="h-4 w-4 transition-transform duration-500 ease-in-out group-hover:translate-y-1" />
+                <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 neon-border shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70">
+                  <Download className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
                   Download Resume
                 </Button>
               </a>
-              <Button variant="outline" size="lg" asChild className="border-2 hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-500 ease-in-out transform hover:scale-105">
+              <Button variant="outline" size="lg" asChild className="border-2 border-blue-500/30 hover:border-blue-500/60 glass hover:bg-blue-500/10 transition-all duration-300 transform hover:scale-105 hover:neon-border">
                 <Link href="#contact">Get In Touch</Link>
               </Button>
             </div>
@@ -187,23 +190,22 @@ export default function Portfolio() {
                 { icon: Github, href: "https://github.com/tahaxd77" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-taha-ayaz/" },
                 { icon: Mail, href: "mailto:tahapices@gmail.com" },
-              ].map(({ icon: Icon, href }) => (
-                <Button key={href} variant="ghost" size="icon" asChild className="hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-500 ease-in-out transform hover:scale-110">
+              ].map(({ icon: Icon, href }, idx) => (
+                <Button key={href} variant="ghost" size="icon" asChild className="hover:bg-blue-500/10 transition-all duration-300 transform hover:scale-110 hover:neon-glow animate-in fade-in duration-500" style={{animationDelay: `${(idx + 4) * 100}ms`}}>
                   <Link href={href} target="_blank">
-                    <Icon className="h-5 w-5 transition-transform duration-500 ease-in-out group-hover:scale-110" />
+                    <Icon className="h-5 w-5 transition-all duration-300 hover:text-blue-400" />
                   </Link>
                 </Button>
               ))}
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse transition-all duration-700 ease-in-out" />
+          <div className="flex justify-center animate-in fade-in-50 duration-1000 delay-500">
+            <div className="relative float">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 rounded-full blur-2xl opacity-50 animate-pulse" style={{animation: "glow-pulse 3s ease-in-out infinite"}} />
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse transition-all duration-700 ease-in-out" />
-                <Avatar className="h-64 w-64 border-4 border-background shadow-2xl transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-blue-500/20 hover:border-blue-500/20">
-                  <AvatarImage src="/images/taha2.png" alt="Muhammad Taha" className="object-cover w-full h-full transition-transform duration-500 ease-in-out" />
-                  <AvatarFallback className="text-4xl bg-gradient-to-r from-blue-600 to-purple-600 text-white transition-all duration-500 ease-in-out">MT</AvatarFallback>
+                <Avatar className="h-64 w-64 border-4 border-blue-500/30 shadow-2xl shadow-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-purple-500/50 hover:border-purple-500/30 neon-border">
+                  <AvatarImage src="/images/taha2.png" alt="Muhammad Taha" className="object-cover w-full h-full transition-transform duration-500" />
+                  <AvatarFallback className="text-4xl bg-gradient-to-r from-blue-600 to-purple-600 text-white">MT</AvatarFallback>
                 </Avatar>
               </div>
             </div>
@@ -212,28 +214,28 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="container px-10 py-24 relative mx-auto transition-all duration-500 ease-in-out">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/5 via-blue-500/5 to-transparent blur-3xl" />
-        <div className="space-y-8 relative">
+      <section id="about" className="container px-10 py-24 relative mx-auto">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-blue-500/10 to-transparent blur-3xl" />
+        <div className="space-y-8 relative z-10">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent neon-text">About Me</h2>
+            <p className="text-muted-foreground/80 max-w-[600px] mx-auto">
               Passionate developer with experience of building scalable web applications
             </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-600/20">
+            <Card className="group glass-card card-hover card-3d hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 border-2 border-blue-500/20 hover:border-blue-400/40">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-blue-600">
-                  <Code className="h-5 w-5" />
+                <CardTitle className="flex items-center gap-2 text-blue-400">
+                  <Code className="h-5 w-5 neon-glow" />
                   Technical Skills
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 transition-all duration-300">
+                  {skills.map((skill, idx) => (
+                    <Badge key={skill} variant="secondary" className="glass border border-blue-500/20 hover:border-blue-400/40 hover:neon-border transition-all duration-300 hover:scale-105 animate-in fade-in" style={{animationDelay: `${idx * 50}ms`}}>
                       {skill}
                     </Badge>
                   ))}
@@ -241,26 +243,26 @@ export default function Portfolio() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-purple-600/20">
+            <Card className="group glass-card card-hover card-3d hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 border-2 border-purple-500/20 hover:border-purple-400/40">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-purple-600">
-                  <Palette className="h-5 w-5" />
+                <CardTitle className="flex items-center gap-2 text-purple-400">
+                  <Palette className="h-5 w-5 neon-glow" />
                   What I Do
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3 group/item">
-                  <Globe className="h-5 w-5 mt-0.5 text-blue-600 group-hover/item:scale-110 transition-transform duration-300" />
+                  <Globe className="h-5 w-5 mt-0.5 text-blue-400 group-hover/item:scale-110 group-hover/item:neon-glow transition-all duration-300" />
                   <div>
                     <h4 className="font-semibold">Web Development</h4>
-                    <p className="text-sm text-muted-foreground">Building responsive and performant web applications</p>
+                    <p className="text-sm text-muted-foreground/80">Building responsive and performant web applications</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 group/item">
-                  <Database className="h-5 w-5 mt-0.5 text-purple-600 group-hover/item:scale-110 transition-transform duration-300" />
+                  <Database className="h-5 w-5 mt-0.5 text-purple-400 group-hover/item:scale-110 group-hover/item:neon-glow transition-all duration-300" />
                   <div>
                     <h4 className="font-semibold">Backend Development</h4>
-                    <p className="text-sm text-muted-foreground">Creating robust APIs and database architectures</p>
+                    <p className="text-sm text-muted-foreground/80">Creating robust APIs and database architectures</p>
                   </div>
                 </div>
               </CardContent>
@@ -270,36 +272,36 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="container px-4 py-24 bg-muted/50 relative mx-auto transition-all duration-500 ease-in-out">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
-        <div className="space-y-8 relative">
+      <section id="projects" className="container px-4 py-24 relative mx-auto">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
+        <div className="space-y-8 relative z-10">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Featured Projects</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent neon-text">Featured Projects</h2>
+            <p className="text-muted-foreground/80 max-w-[600px] mx-auto">
               Here are some of my recent projects that showcase my skills and experience
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-600/20">
+              <Card key={index} className="group glass-card card-hover card-3d overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 border-2 border-blue-500/20 hover:border-blue-400/40">
                 <div className="aspect-video relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="line-clamp-1 group-hover:text-blue-600 transition-colors duration-300">{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="line-clamp-1 group-hover:text-blue-400 transition-colors duration-300">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground/80">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:from-blue-600/20 hover:to-purple-600/20 transition-all duration-300">
+                      <Badge key={tech} variant="outline" className="text-xs glass border border-blue-500/20 hover:border-blue-400/40 hover:neon-border transition-all duration-300">
                         {tech}
                       </Badge>
                     ))}
@@ -307,7 +309,7 @@ export default function Portfolio() {
                   <div className="flex gap-2">
                     {/* Only show buttons if links are provided */}
                     {project.github && (
-                      <Button size="sm" variant="outline" asChild className="hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300">
+                      <Button size="sm" variant="outline" asChild className="glass border-blue-500/20 hover:border-blue-400/40 hover:bg-blue-500/10 transition-all duration-300">
                         <Link href={project.github} target="_blank">
                           <Github className="h-4 w-4 mr-1" />
                           Code
@@ -315,7 +317,7 @@ export default function Portfolio() {
                       </Button>
                     )}
                     {project.live && (
-                      <Button size="sm" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
+                      <Button size="sm" asChild className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 neon-border shadow-lg shadow-blue-500/30">
                         <Link href={project.live} target="_blank">
                           <ExternalLink className="h-4 w-4 mr-1" />
                           Live Demo
@@ -333,37 +335,37 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container px-4 py-24 bg-muted/50 relative mx-auto transition-all duration-500 ease-in-out">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
-        <div className="space-y-8 relative">
+      <section id="contact" className="container px-4 py-24 relative mx-auto">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/10 via-purple-500/10 to-transparent blur-3xl" />
+        <div className="space-y-8 relative z-10">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Get In Touch</h2>
-            <p className="text-muted-foreground max-w-[600px] mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent neon-text">Get In Touch</h2>
+            <p className="text-muted-foreground/80 max-w-[600px] mx-auto">
               I'm always open to discussing new opportunities and interesting projects
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-600/20">
+            <Card className="group glass-card card-hover hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 border-2 border-blue-500/20 hover:border-blue-400/40">
               <CardContent className="pt-6">
                 <div className="grid gap-6 md:grid-cols-2">
                   <div className="space-y-4">
                     {[
-                      { icon: Mail, text: "Email", value: "tahapices@gmail.com", color: "text-blue-600" },
-                      { icon: Phone, text: "Phone", value: "+92-305-5800377", color: "text-green-600" },
-                      { icon: MapPin, text: "Location", value: "Lahore, Pakistan", color: "text-red-600" },
+                      { icon: Mail, text: "Email", value: "tahapices@gmail.com", color: "text-blue-400" },
+                      { icon: Phone, text: "Phone", value: "+92-305-5800377", color: "text-green-400" },
+                      { icon: MapPin, text: "Location", value: "Lahore, Pakistan", color: "text-red-400" },
                     ].map(({ icon: Icon, text, value, color }) => (
                       <div key={text} className="flex items-center space-x-3 group/item">
-                        <Icon className={`h-5 w-5 ${color} group-hover/item:scale-110 transition-transform duration-300`} />
+                        <Icon className={`h-5 w-5 ${color} group-hover/item:scale-110 group-hover/item:neon-glow transition-all duration-300`} />
                         <div>
                           <p className="font-semibold">{text}</p>
-                          <p className="text-sm text-muted-foreground">{value}</p>
+                          <p className="text-sm text-muted-foreground/80">{value}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className="space-y-4">
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300" size="lg" asChild>
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300 neon-border shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70" size="lg" asChild>
                       <Link href="mailto:tahapices@gmail.com">
                         <Mail className="h-4 w-4 mr-2" />
                         Send Email
@@ -374,7 +376,7 @@ export default function Portfolio() {
                         { icon: Github, href: "https://github.com/tahaxd77" },
                         { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-taha-ayaz/" },
                       ].map(({ icon: Icon, href }) => (
-                        <Button key={href} variant="outline" size="icon" asChild className="hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-purple-600/10 transition-all duration-300">
+                        <Button key={href} variant="outline" size="icon" asChild className="glass border-blue-500/20 hover:border-blue-400/40 hover:bg-blue-500/10 transition-all duration-300 hover:neon-glow">
                           <Link href={href} target="_blank">
                             <Icon className="h-5 w-5" />
                           </Link>
@@ -390,12 +392,12 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0 relative">
+      <footer className="border-t border-blue-500/20 py-6 md:py-0 relative glass">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-purple-500/5 to-transparent blur-3xl" />
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row relative">
+        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row relative z-10">
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-            <Code className="h-6 w-6 text-blue-600" />
-            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+            <Code className="h-6 w-6 text-blue-400 neon-glow" />
+            <p className="text-center text-sm leading-loose text-muted-foreground/80 md:text-left">
               © {new Date().getFullYear()} Muhammad Taha.
             </p>
           </div>
